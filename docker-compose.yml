@@ -1,0 +1,45 @@
+version: '3.7'
+
+services:
+  app:
+    build:
+      context: ./Docker
+      dockerfile: Dockerfile
+    container_name: grootech-oee-telkomsel-app
+    working_dir: /var/www/html
+    volumes:
+      - ./:/var/www/html
+    networks:
+      - grootech-oee-telkomsel
+  nginx:
+    image: nginx:1.19-alpine
+    container_name: grootech-oee-telkomsel-nginx
+    ports:
+      - 82:80
+    volumes:
+      - ./:/var/www/html
+      - ./nginx/conf.d:/etc/nginx/conf.d/
+      - ./nginx/logs:/var/log/nginx
+    networks:
+      - grootech-oee-telkomsel
+
+  # postgres:
+  #   image: postgres:12
+  #   container_name: grootech-oee-telkomsel-postgres
+  #   restart: unless-stopped
+  #   ports:
+  #     - "5433:5432"
+  #   volumes:
+  #     - postgres-data:/var/lib/postgresql/data
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: root
+  #     POSTGRES_DB: oee-telkom
+  #     POSTGRES_HOST_AUTH_METHOD: "trust"
+  #   networks:
+  #     - grootech-oee-telkomsel
+volumes:
+  postgres-data:
+
+networks:
+  grootech-oee-telkomsel:
