@@ -1,8 +1,8 @@
 <aside class="sidebar-wrapper" data-simplebar="true">
     <div class="sidebar-header">
         <div class="mx-auto">
-            <img src="{{asset('img/logo-telkom-white.png')}}" width="150px" alt="Logo" style="filter: none!important;" class="sidebar-img-dark logo-text">
-            <img src="{{asset('img/logo-telkom-red.png')}}" width="150px" alt="Logo" style="filter: none!important;" class="sidebar-img-light logo-text">
+            {{-- <img src="{{asset('img/logo-telkom-white.png')}}" width="150px" alt="Logo" style="filter: none!important;" class="sidebar-img-dark logo-text"> --}}
+            {{-- <img src="{{asset('img/logo-telkom-red.png')}}" width="150px" alt="Logo" style="filter: none!important;" class="sidebar-img-light logo-text"> --}}
 
         </div>
         <div>

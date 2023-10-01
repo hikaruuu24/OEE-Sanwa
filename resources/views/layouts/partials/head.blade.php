@@ -12,7 +12,6 @@
     <link href="{{ asset('telkom') }}/assets/css/bootstrap.min.css" rel="stylesheet" />
     <link href="{{ asset('telkom') }}/assets/css/bootstrap-extended.css" rel="stylesheet" />
     <link href="{{ asset('telkom') }}/assets/css/style.css" rel="stylesheet" />
-    <link href="{{ asset('telkom') }}/assets/css/icons.css" rel="stylesheet">
     <!-- Select2 -->
     <link rel="stylesheet" href="{{ asset('plugins/select2/css/select2.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css') }}">
@@ -24,7 +23,6 @@
     <link rel="stylesheet" href="{{ asset('plugins/datatables-bs4/css/dataTables.bootstrap4.min.css') }}">
     <link rel="stylesheet" href="{{ asset('plugins/datatables-responsive/css/responsive.bootstrap4.min.css') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('telkom') }}/npm/bootstrap-icons/font/bootstrap-icons.css">
 
     <!-- loader-->
     <link href="{{ asset('telkom') }}/assets/css/pace.min.css" rel="stylesheet" />

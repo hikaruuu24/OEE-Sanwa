@@ -12,6 +12,7 @@
 <script src="{{ asset('plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js') }}"></script>
 <!-- Jquery Confirm -->
 <script src="{{ asset('plugins/jquery-confirm/js/jquery-confirm.js') }}"></script>
+<script src="{{ asset('plugins/moment/moment.min.js') }}"></script>
 <!-- DataTables  & Plugins -->
 <script src="{{ asset('plugins/datatables/jquery.dataTables.min.js') }}"></script>
 <script src="{{ asset('plugins/datatables-bs4/js/dataTables.bootstrap4.min.js') }}"></script>
@@ -24,8 +25,29 @@
 <script src="{{ asset('plugins/bs-custom-file-input/bs-custom-file-input.min.js') }}"></script>
  <!--app-->
  <script src="{{ asset('telkom') }}/assets/js/app.js"></script>
+
 @stack('script')
  <script>
+
+        
+        $('#time_to').on('change', function () {
+            let time_from = $('#time_from').val()
+            let time_to = $('#time_to').val()
+            var startTime = moment(time_from, 'hh:mm');
+            var endTime = moment(time_to, 'hh:mm');
+            let duration = endTime.diff(startTime, 'minutes');
+
+            if (duration < 0) {
+                let startTime2 = moment('2000-01-01 ' + time_from, 'YYYY-MM-DD hh:mm');
+                let endTime2 = moment('2000-01-02 ' + time_to, 'YYYY-MM-DD hh:mm');
+                let overduration = endTime2.diff(startTime2, 'minutes');
+                duration = overduration
+            } else {
+                duration = duration
+            }
+
+            $('#production_time').val(duration)
+        })
 
     //-- Loader
     $(document).ready(function(){

@@ -3,6 +3,7 @@
 use App\Http\Controllers\ControllersController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\DepartementController;
+use App\Http\Controllers\OeeMachineController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DeviceController;
 use App\Http\Controllers\HistoryLogController;
@@ -25,6 +26,10 @@ Route::get('/', function () {
 })->name('user.login');
 
 Route::middleware('auth:web')->group(function () {
+
+    //oee
+    Route::resource('oee', OeeMachineController::class);
+
     // Dashboard
     Route::get('dashboard', [DashboardController::class, 'dashboard'])->name('dashboard.index');
 
